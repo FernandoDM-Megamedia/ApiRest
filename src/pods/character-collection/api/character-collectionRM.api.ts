@@ -4,17 +4,28 @@ import { CharacterEntityApiRM, InfoEntityApiRM } from './character-collectionRM.
 
 // let characterCollection = [...mockCharacterCollectionRM];
 // const url = '/api/results';
-const url = 'https://rickandmortyapi.com/api/character/';
+let url = 'https://rickandmortyapi.com/api/character/';
+
 // https://rickandmortyapi.com/api/character/?page=2
 
-export const getCharacterCollection = (): Promise<CharacterEntityApiRM[]> => {
+export const getCharacterCollection = (page): Promise<CharacterEntityApiRM[]> => {
   // return characterCollection;
   // const response  = await fetch(url);
   // const response  = fetch(url);
   // console.log("Character-collectios.api.ts <----------", url);
+  let aux = '';
+  if (page != null) {
+    console.log('pagina ----->', page);
+    aux = page;
+  } else {
+    console.log('carga inicial ', url);
+    aux = url;
+  }
+  // siguiente linea ok 
+  return fetch((aux)).then(character => character.json().then(data => data.results))
 
-  return fetch(url).then(character => character.json().then(data => data.results))
-
+  // con paginación
+  
 
   // if (response.ok) {
   //   return await response.json();
@@ -23,13 +34,20 @@ export const getCharacterCollection = (): Promise<CharacterEntityApiRM[]> => {
   // }
 };
 
-export const getInfoCollection = (): Promise<InfoEntityApiRM> => {
+export const getInfoCollection = (page): Promise<InfoEntityApiRM> => {
   // return characterCollection;
   // const response  = await fetch(url);
   // const response  = fetch(url);
   // console.log("Character-collectios.api.ts <----------", url);
-
-  return fetch(url).then(info => info.json().then(data => data.info))
+  let aux = '';
+  if (page != null) {
+    console.log('info ----->', page);
+    aux = page;
+  } else {
+    console.log('carga inicial ', url);
+    aux = url;
+  }
+  return fetch((aux)).then(info => info.json().then(data => data.info))
 
 
   // if (response.ok) {

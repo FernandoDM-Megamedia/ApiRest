@@ -10,16 +10,16 @@ export const useCharacterCollection = () => {
   // duda en la siguiente línea ------------------------------------v
   const [infoCollection, setinfoCollection] = useState<InfoEntityVmRM>();
 
-  const loadCharacterCollection = () => {
-    getCharacterCollection().then((result) => {
+  const loadCharacterCollection = (next) => {
+    getCharacterCollection(next).then((result) => {
         console.log('result ---->', result)
         setCharacterCollection(mapToCollection(result, characterMapFromApiToVm))
       }
     );
   };
 
-  const loadInfoCollection = () => {
-    getInfoCollection().then((info) => {
+  const loadInfoCollection = (page) => {
+    getInfoCollection(page).then((info) => {
         console.log('loadInfoCollection - info------->', info)
         // duda en la siguiente línea ----v
         setinfoCollection(infoMapFromApiToVm(info))

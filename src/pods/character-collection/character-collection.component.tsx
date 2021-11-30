@@ -1,5 +1,5 @@
 import * as React from 'react';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import { CharacterEntityVmRM, InfoEntityVmRM } from './character-collection.vm';
 import { CharacterCard } from './components/character-card.component';
 import * as classes from './character-collection.styles';
@@ -12,13 +12,15 @@ interface Props {
   onView: (id: number) => void;
   onEdit: (id: number) => void;
   onDelete: (id: number) => void;
+  onPrevPage: (prev: string) => void;
+  onNextPage: (next: string) => void;
 }
 
 export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
   props
 ) => {
   // const { characterCollection, onCreateCharacter, onEdit, onDelete } = props;
-  const { characterCollection, infoCollection, onEdit, onDelete , onView} = props;
+  const { characterCollection, infoCollection, onEdit, onDelete , onView, onPrevPage, onNextPage} = props;
   console.log('infoCollection ------------xxxxx--------------->', infoCollection);
   return (
     <div className={classes.root}>
@@ -38,6 +40,12 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
               Página anterior .- {infoCollection?.prev}<br />
             </span>
         </p>
+      <Button variant="contained" color="primary" onClick={() => onPrevPage(infoCollection?.prev)}>
+        anterior
+      </Button>
+      <Button variant="contained" color="primary"  onClick={() => onNextPage(infoCollection?.next)}>
+        siguiente
+      </Button>
       </div>
       <ul className={classes.list}>
         {characterCollection.map((character) => (
@@ -46,6 +54,7 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
           </li>
         ))}
       </ul>
+      
     </div>
   );
 };
