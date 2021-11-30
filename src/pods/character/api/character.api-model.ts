@@ -14,7 +14,7 @@ export interface CharacterEntityApiRM {
       url: string;        
   }
   image: string;
-  episode: any; // <---- ¿?¿? duda array
+  episode: string[]; // <---- ¿?¿? duda array
   url: string;
   created: string;
 }

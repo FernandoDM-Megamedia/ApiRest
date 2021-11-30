@@ -17,7 +17,7 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
     console.log('handleLoadCharacter----------_>', apiCharacter);
     // peta aqui en el seteo de datos ¿?
     setCharacter(characterMapFromApiToVm(apiCharacter));
-    console.log('seteamos datos a character ----------_>', character);
+    console.log('seteamos datos a character ----------_>', apiCharacter);
 
   };
 
