@@ -32,10 +32,10 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
         </p>
         <p>
             <span>
-              Número de personajes .- {infoCollection.count}<br />
-              Páginas .- {infoCollection.pages}<br />
-              Siguiente página .- {infoCollection.next}<br />
-              Página anterior .- {infoCollection.prev}<br />
+              Número de personajes .- {infoCollection?.count}<br />
+              Páginas .- {infoCollection?.pages}<br />
+              Siguiente página .- {infoCollection?.next}<br />
+              Página anterior .- {infoCollection?.prev}<br />
             </span>
         </p>
       </div>

@@ -8,7 +8,7 @@ export const useCharacterCollection = () => {
   console.log('useCharacterCollection------------------');
   const [characterCollection, setCharacterCollection] = useState<CharacterEntityVmRM[]>([]);
   // duda en la siguiente línea ------------------------------------v
-  const [infoCollection, setinfoCollection] = useState<InfoEntityVmRM[]>({});
+  const [infoCollection, setinfoCollection] = useState<InfoEntityVmRM>();
 
   const loadCharacterCollection = () => {
     getCharacterCollection().then((result) => {

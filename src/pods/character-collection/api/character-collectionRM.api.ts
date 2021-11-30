@@ -23,7 +23,7 @@ export const getCharacterCollection = (): Promise<CharacterEntityApiRM[]> => {
   // }
 };
 
-export const getInfoCollection = (): Promise<InfoEntityApiRM[]> => {
+export const getInfoCollection = (): Promise<InfoEntityApiRM> => {
   // return characterCollection;
   // const response  = await fetch(url);
   // const response  = fetch(url);
@@ -43,11 +43,11 @@ export const deleteCharacter = async (id: number): Promise<boolean> => {
   // base
   // characterCollection = characterCollection.filter((h) => h.id !== id);
   // return true;
-  
+
   // version primera
   // const response = await fetch(`${url}/${id}` ,{method: 'DELETE' });
   // return response.ok;
-  
+
   // version con axios
   await Axios.delete(`${url}/${id}`);
   return true;

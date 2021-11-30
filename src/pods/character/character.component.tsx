@@ -18,16 +18,15 @@ interface Props {
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
   const { infoCharacter } = props;
-  
+
   return (
     <>
       <div>
         ficha de personaje .- <br/>
-        { infoCharacter}
-        {/* {infoCharacter.id}
-        {infoCharacter.name}
-        {infoCharacter.gender}
-        {infoCharacter.image} */}
+        {infoCharacter?.id}
+        {infoCharacter?.name}
+        {infoCharacter?.gender}
+        {infoCharacter?.image}
       </div>
     </>
   );

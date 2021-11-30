@@ -7,7 +7,7 @@ import { CharacterComponent } from './character.component';
 
 export const CharacterContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<CharacterEntityVmRM>();
-  const { id } = useParams();  
+  const { id } = useParams();
   console.log('container id----------_>', id);
   // const history = useHistory();
 
