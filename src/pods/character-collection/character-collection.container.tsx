@@ -9,7 +9,7 @@ export const CharacterContainer = () => {
   const { characterCollection, loadCharacterCollection } = useCharacterCollection();
   const { infoCollection, loadInfoCollection } = useCharacterCollection();
   const history = useHistory();
- 
+
   React.useEffect(() => {
     loadCharacterCollection('');
     loadInfoCollection('');
@@ -33,14 +33,15 @@ export const CharacterContainer = () => {
     await deleteCharacter(id);
     loadCharacterCollection('');
   };
-  const handlePrevPage = async (prev: string) => {
-    console.log('handlePrevPage page ----->', prev);
-    
-  };
-  const handleNextPage = async (next: string) => {
-    console.log('next page ----->', next);
-    loadCharacterCollection(next);
-    loadInfoCollection(next);
+
+  const handleNextPrevPage = async (page: string) => {
+    console.log('next page ----->', page);
+    if(page != null) {
+      loadCharacterCollection(page);
+      loadInfoCollection(page);
+    } else {
+      console.log('no hay más paginas');
+    }
   };
 
   return (
@@ -51,8 +52,8 @@ export const CharacterContainer = () => {
       onView={handleView}
       onEdit={handleEdit}
       onDelete={handleDelete}
-      onNextPage={handleNextPage}
-      onPrevPage={handlePrevPage}
+      onNextPage={handleNextPrevPage}
+      onPrevPage={handleNextPrevPage}
     />
   );
 };

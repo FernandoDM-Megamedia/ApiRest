@@ -12,20 +12,21 @@ export const getCharacterCollection = (page): Promise<CharacterEntityApiRM[]> =>
   // return characterCollection;
   // const response  = await fetch(url);
   // const response  = fetch(url);
-  // console.log("Character-collectios.api.ts <----------", url);
+  console.log("url de inicio <----------", url);
+  console.log("pagina <----------", page);
   let aux = '';
-  if (page != null) {
+  if (page != '') {
     console.log('pagina ----->', page);
     aux = page;
   } else {
     console.log('carga inicial ', url);
     aux = url;
   }
-  // siguiente linea ok 
+  // siguiente linea ok
   return fetch((aux)).then(character => character.json().then(data => data.results))
 
   // con paginación
-  
+
 
   // if (response.ok) {
   //   return await response.json();
@@ -40,7 +41,7 @@ export const getInfoCollection = (page): Promise<InfoEntityApiRM> => {
   // const response  = fetch(url);
   // console.log("Character-collectios.api.ts <----------", url);
   let aux = '';
-  if (page != null) {
+  if (page != '') {
     console.log('info ----->', page);
     aux = page;
   } else {

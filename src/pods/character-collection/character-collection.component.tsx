@@ -54,7 +54,7 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
           </li>
         ))}
       </ul>
-      
+
     </div>
   );
 };
