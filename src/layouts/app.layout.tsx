@@ -12,11 +12,12 @@ export const AppLayout: React.FunctionComponent = (props) => {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar position="static" color="primary">
         <Toolbar variant="dense">
-          <IconButton color="inherit" aria-label="Menu">
+          <h2>Ejercicio 01 ApiRest .- Rick & Morty https://rickandmortyapi.com/ </h2>
+          {/* <IconButton color="inherit" aria-label="Menu">
             <AccountCircle />
-          </IconButton>
+          </IconButton> */}
         </Toolbar>
       </AppBar>
       <main className={classes.content}>{children}</main>

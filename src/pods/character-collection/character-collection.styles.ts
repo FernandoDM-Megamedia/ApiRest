@@ -7,6 +7,15 @@ export const root = css`
   }
 `;
 
+export const pagination = css`
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: space-around;
+`;
+
 export const list = css`
   display: grid;
   grid-template-columns: repeat(1, 1fr);

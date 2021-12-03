@@ -8,7 +8,7 @@ export interface CharacterEntityVmRM {
   origin: object;
   location: object;
   image: string;
-  episode: any; // <---- ¿?¿? duda array
+  episode: any;
   url: string;
   created: string;
 }

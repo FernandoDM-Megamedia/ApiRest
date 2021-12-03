@@ -17,12 +17,13 @@ import * as classes from './character-card.styles';
 interface Props {
   character: CharacterEntityVmRM;
   onView: (id: number) => void;
-  onEdit: (id: number) => void;
-  onDelete: (id: number) => void;
+  // onEdit: (id: number) => void;
+  // onDelete: (id: number) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
-  const { character, onEdit, onDelete, onView } = props;
+  // const { character, onEdit, onDelete, onView } = props;
+  const { character, onView } = props;
   return (
     <Card>
       <CardHeader
@@ -46,12 +47,12 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         <IconButton onClick={() => onView(character.id)}>
           <DetailsIcon/>
         </IconButton>
-        <IconButton onClick={() => onEdit(character.id)}>
+        {/* <IconButton onClick={() => onEdit(character.id)}>
           <EditIcon />
         </IconButton>
         <IconButton onClick={() => onDelete(character.id)}>
           <DeleteIcon />
-        </IconButton>
+        </IconButton> */}
       </CardActions>
     </Card>
   );

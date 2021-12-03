@@ -60,7 +60,6 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
               <span>{infoCharacter?.type}</span>
               <span>{infoCharacter?.location?.name}</span>
               <span>{infoCharacter?.location?.url}</span>
-
               <span>{infoCharacter?.origin?.name}</span>
               <span>{infoCharacter?.origin?.url}</span>
               <ul>
@@ -71,7 +70,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
         </div>
       </CardContent>
       <CardActions>
-        {/* boton re regreso */}
+
       </CardActions>
     </Card>
     </>

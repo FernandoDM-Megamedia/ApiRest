@@ -16,15 +16,6 @@ export const switchRoutes: SwitchRoutes = {
 
 type NavigationFunction = (id: any) => string;
 
-// interface LinkRoutes extends Omit<SwitchRoutes, 'editHotel'> {
-//   editHotel: NavigationFunction;
-// }
-
-// export const linkRoutes: LinkRoutes = {
-//   ...switchRoutes,
-//   editHotel: (id) => generatePath(switchRoutes.editHotel, { id })
-// };
-
 interface LinkRoutes extends Omit<SwitchRoutes, 'editCharacter'> {
   editCharacter: NavigationFunction;
 }
